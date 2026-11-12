@@ -1,0 +1,25 @@
+import PropTypes from 'prop-types'
+
+const LineChartUp = ({ className }) => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className}`}
+  >
+    <path
+      d="M16.5 16.5H2.83333C2.36662 16.5 2.13327 16.5 1.95501 16.4092C1.79821 16.3293 1.67072 16.2018 1.59083 16.045C1.5 15.8667 1.5 15.6334 1.5 15.1667V1.5M15.6667 5.66667L12.4009 9.15221C12.2772 9.28431 12.2153 9.35036 12.1406 9.3845C12.0747 9.41463 12.0021 9.42706 11.93 9.42055C11.8482 9.41319 11.7679 9.37148 11.6072 9.28806L8.89277 7.8786C8.73212 7.79519 8.65179 7.75348 8.57003 7.74611C8.49787 7.73961 8.42526 7.75204 8.35936 7.78217C8.28471 7.81631 8.22282 7.88236 8.09906 8.01445L4.83333 11.5"
+      stroke="#61656C"
+      strokeWidth="1.67"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+LineChartUp.propTypes = {
+  className: PropTypes.string
+}
+
+export default LineChartUp

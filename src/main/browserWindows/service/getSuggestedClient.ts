@@ -1,0 +1,3 @@
+export function getSuggestedClient() {
+  return Math.floor(Math.random() * 6) + 1
+}

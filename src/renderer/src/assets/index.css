@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --font-*: initial;
+  --font-outfit: Outfit, sans-serif;
+
+  --breakpoint-*: initial;
+  --breakpoint-2xsm: 375px;
+  --breakpoint-xsm: 425px;
+  --breakpoint-3xl: 2000px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --text-title-2xl: 72px;
+  --text-title-2xl--line-height: 90px;
+  --text-title-xl: 60px;
+  --text-title-xl--line-height: 72px;
+  --text-title-lg: 48px;
+  --text-title-lg--line-height: 60px;
+  --text-title-md: 36px;
+  --text-title-md--line-height: 44px;
+  --text-title-sm: 30px;
+  --text-title-sm--line-height: 38px;
+  --text-theme-xl: 20px;
+  --text-theme-xl--line-height: 30px;
+  --text-theme-sm: 14px;
+  --text-theme-sm--line-height: 20px;
+  --text-theme-xs: 12px;
+  --text-theme-xs--line-height: 18px;
+
+  --shadow-theme-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  --shadow-theme-lg: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-theme-sm: 0px 1px 3px 0px rgba(16, 24, 40, 0.1), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+  --shadow-theme-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-theme-xl: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+    0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+  --shadow-datepicker: -5px 0 0 #262d3c, 5px 0 0 #262d3c;
+  --shadow-focus-ring: 0px 0px 0px 4px rgba(70, 95, 255, 0.12);
+  --shadow-slider-navigation: 0px 1px 2px 0px rgba(16, 24, 40, 0.1),
+    0px 1px 3px 0px rgba(16, 24, 40, 0.1);
+  --shadow-tooltip: 0px 4px 6px -2px rgba(16, 24, 40, 0.05),
+    -8px 0px 20px 8px rgba(16, 24, 40, 0.05);
+
+  --drop-shadow-4xl: 0 35px 35px rgba(0, 0, 0, 0.25), 0 45px 65px rgba(0, 0, 0, 0.15);
+
+  --z-index-1: 1;
+  --z-index-9: 9;
+  --z-index-99: 99;
+  --z-index-999: 999;
+  --z-index-9999: 9999;
+  --z-index-99999: 99999;
+  --z-index-999999: 999999;
+}
+
+@layer base {
+  #root {
+    @apply h-full;
+    --primary-color: #fff;
+    --secondary-color: #000;
+  }
+
+  html,
+  body {
+    @apply h-full;
+    @apply select-none;
+    @apply overflow-hidden;
+    @apply font-sans antialiased bg-layout-color text-text-default  text-base;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .blinking-text {
+    animation: blink 1.7s infinite;
+  }
+
+  *:focus {
+    outline: none !important;
+  }
+
+  input[type='time']::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+  input[type='date']::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+  input[type='date']:focus {
+    outline: none !important;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    opacity: 1;
+    display: inline-block;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  button {
+    -webkit-app-region: no-drag;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#555] rounded-md;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-corner {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #373a41;
+    border-radius: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #373a41 transparent;
+  }
+
+  .custom-table-list {
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: #0c0e12;
+      padding: 2px 6px;
+      text-align: start;
+    }
+
+    th {
+      box-shadow: inset 0 0 0 1px lightgray;
+    }
+  }
+
+  .custom-table {
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: #f8f6f6;
+      padding: 2px 6px;
+      text-align: start;
+    }
+
+    th,
+    td {
+      box-shadow: inset 0 0 0 1px lightgray;
+    }
+  }
+
+  .resizer {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 15px;
+    cursor: col-resize;
+    user-select: none;
+    touch-action: none;
+  }
+
+  .resizer.isResizing {
+    background: gray;
+    opacity: 1;
+    width: 2px;
+  }
+
+  .resizer.ltr {
+    right: 0;
+  }
+
+  input[type='time']::-webkit-calendar-picker-indicator {
+    filter: invert(17%) sepia(96%) saturate(7485%) hue-rotate(357deg) brightness(97%) contrast(117%);
+    cursor: pointer;
+  }
+
+  input[type='range']::-webkit-slider-runnable-track {
+    background: transparent;
+  }
+  input[type='range']::-moz-range-track {
+    background: transparent;
+  }
+  input[type='range']::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 7px;
+    width: 30px;
+    border-radius: 10px;
+    background: #888888;
+    cursor: pointer;
+  }
+  input[type='range']::-moz-range-thumb {
+    height: 7px;
+    width: 30px;
+    border-radius: 10px;
+    background: #888888;
+    cursor: pointer;
+  }
+  input[type='range']::-ms-thumb {
+    height: 7px;
+    width: 30px;
+    border-radius: 10px;
+    background: #888888;
+    cursor: pointer;
+  }
+}
